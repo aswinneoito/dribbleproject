@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-secondary">
+    <section
+      class="bg-white h-screen antialiased rounded-2xl overflow-hidden relative"
+    >
+      <nav
+        class="fixed top-0 left-0 h-screen w-16 bg-white border-transparent rounded-l-2xl">
+        <div class="flex flex-col justify-around">
+          <div class="flex justify-between flex-col h-screen">
+            <div>
+              <a href="#"><img
+                src="./assets/zlogo.png"
+                class="w-10 mb-1 py-2 text-center mx-auto"
+              />
+              </a>
+              <hr class="border border-grey-900 ml-1" />
+            </div>
+            <ul class="flex flex-col items-center py-4 h-screen mt-40">
+              <li class="hover:bg-secondary w-full" onclick="openNav()">
+                <img src="./assets/home.png" class="w-6 mx-auto my-4" />
+              </li>
+              <li class="hover:bg-secondary w-full toggle" onclick="openNav()">
+                <img src="./assets/people.png" class="w-6 my-4 mx-auto" />
+              </li>
+              <li class="hover:bg-secondary w-full toggle" onclick="openNav()">
+                <img
+                  src="./assets/notepad.png"
+                  class="w-6 my-4 mx-automx-auto mx-auto"
+                />
+              </li>
+              <li class="hover:bg-secondary w-full toggle" onclick="openNav()">
+                <img src="./assets/checkbox.png" class="w-6 my-4 mx-auto" />
+              </li>
+              <li class="hover:bg-secondary w-full toggle" onclick="openNav()">
+                <img src="./assets/clock.png" class="w-6 my-4 mx-auto" />
+              </li>
+              <li class="hover:bg-secondary w-full toggle" onclick="openNav()">
+                <img src="./assets/message.png" class="w-6 my-4 mx-auto" />
+              </li>
+            </ul>
+            <img src="./assets/question mark.png" class="w-11 mx-auto mb-2" />
+          </div>
+        </div>
+      </nav>
+      <div
+        class="bg-secondary h-screen hidden ml-16 mx-auto w-1/5 activator"
+        id="mysidenav"
+      >
+        <div class="pl-4">
+          <a href="#"
+            ><h1 class="text-left text-3xl font-bold">Ziferblat</h1>
+            <p class="text-xs">Team work & Time management</p></a
+          >
+        </div>
+        <hr class="border border-grey-900 mt-2" />
+        <button class="accordion">Team</button>
+        <div class="panel">
+          <ul class="pl-6">
+            <li>nothing</li>
+            <li>nothing</li>
+            <li>nothing</li>
+            <li>nothing</li>
+          </ul>
+        </div>
+
+        <button class="accordion">Projects</button>
+        <div class="panel">
+          <ul class="pl-6">
+            <li>All projects(4)</li>
+            <li>Design system</li>
+            <li>
+              making unique design <br />
+              for customer
+            </li>
+            <li>user flow</li>
+          </ul>
+        </div>
+
+        <button class="accordion">Task</button>
+        <div class="panel">
+          <ul class="pl-6">
+            <li>All projects(4)</li>
+            <li>Design system</li>
+            <li>
+              making unique design <br />
+              for customer
+            </li>
+            <li>user flow</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script>
+    var classname = document.getElementsByClassName("toggle");
+    var sidebar = document.getElementsByClassName("activator");
+    var x = 0;
+    function openNav() {
+      if (x == 1) {
+        x = 0;
+        document.getElementById("mysidenav").style.display = "block";
+      } else {
+        x = 1;
+        document.getElementById("mysidenav").style.display = "none";
+      }
+    }
+
+    // Loop through the buttons and add the active class to the current/clicked button
+    // for (var i = 0; i < classname.length; i++) {
+    //   classname[i].addEventListener("click", function() {
+    // function openNav() {
+    //   document.getElementById("mySidenav").style.width = "20%";
+    // }
+
+    // function closeNav() {
+    //   document.getElementById("mySidenav").style.width = "0";
+    // }
+
+    //   });
+    // }
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+  </script>
+</html>
