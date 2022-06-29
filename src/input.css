@@ -8,4 +8,10 @@
     .panel{
         @apply py-1 bg-secondary hidden overflow-hidden;
     }
+    .siden {
+        @apply w-1/5;
+    }
+    .sidenc {
+        @apply w-0s;
+    }
 }
